@@ -1,7 +1,7 @@
 import java.util.*;
 class Solution {
     ArrayList<Integer> removeDuplicates(int[] arr) {
-        
+        git config --global user.name
         ArrayList<Integer> list = new ArrayList<>();
         
         list.add(arr[0]);

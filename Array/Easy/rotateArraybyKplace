@@ -1,0 +1,40 @@
+//brute force approach
+class Solution {
+    // Function to rotate an array by d elements in counter-clockwise direction.
+    static void rotateArr(int arr[], int d) {
+        // add your code here
+        for(int i = 0; i < d; i++){
+            int temp = arr[i];
+            arr[i]= arr[arr.length-1];
+            arr[arr.length-1] = temp;
+        }
+        
+    }
+}
+
+//optimal solution
+class Solution {
+    static void rotateArr(int arr[], int d) {
+        // code here
+        int n = arr.length;
+        d = d%n;
+        
+        int[] temp = new int[d];
+        for(int i = 0 ; i < d; i++){
+            
+            temp[i] = arr[i];
+        }
+        
+          for(int i = d; i < arr.length; i++){
+            
+            arr[i-d] = arr[i];
+        }
+        
+        
+        
+        for(int i = n-d; i < arr.length; i++){
+            
+            arr[i] = temp[i-(n-d)];
+        }
+    }
+}
