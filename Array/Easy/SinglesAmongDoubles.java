@@ -26,3 +26,16 @@ class Solution {
         return -1;
     }
 }
+
+//optimal approach
+class Solution {
+    int single(int[] arr) {
+
+        int xor = 0;
+        for(int i =0; i < arr.length; i++){
+            xor^=arr[i];
+        }
+
+        return xor;
+    }
+}
