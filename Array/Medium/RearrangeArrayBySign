@@ -1,0 +1,53 @@
+//brute force approach
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+
+        ArrayList<Integer> positive = new ArrayList<>();
+        ArrayList<Integer> negative = new ArrayList<>();
+
+        int n = nums.length/2;
+
+        for(int i =0; i < nums.length; i++){
+
+            if(nums[i]<0){
+                 positive.add(nums[i]);
+            }
+            else{
+                negative.add(nums[i]);
+            }
+        }
+
+        for(int i =0; i < n; i++){
+            nums[2*i] = negative.get(i);
+            nums[2*i+1] = positive.get(i);
+        }
+
+    return nums;
+
+    }
+}
+
+//better approach
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+
+        int positive = 0;
+        int negative = 1;
+        int[] res = new int[nums.length];
+        for(int i =0; i < nums.length; i++){
+
+            if(nums[i]>0){
+                
+                 res[positive] = nums[i];
+                 positive+=2;
+            }
+            else{
+                 res[negative] = nums[i];
+                 negative+=2;
+            }
+        }
+
+
+    return res;
+    }
+}
